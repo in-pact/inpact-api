@@ -12,6 +12,7 @@ class Resource
   public static $resource_name;
   public static $collection_name;
   public static $remote_forbidden_attributes = array("id");
+  public static $update_method = "put";
   public $attributes;
 
   public static function find($params = array()) {
@@ -60,7 +61,8 @@ class Resource
     }
     $response = null;
     if (isset($this->attributes["id"])) {
-      $response = API::$default_client->put($resource_url, $attrs);
+      $method = static::$update_method;
+      $response = API::$default_client->$method($resource_url, $attrs);
     } else {
       $response = API::$default_client->post($resource_url, $attrs);
     }

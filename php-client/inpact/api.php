@@ -55,6 +55,10 @@ class API
     return $this->connection->put($url, $params);
   }
 
+  public function patch($url, $params = array()) {
+    return $this->connection->patch($url, $params);
+  }
+
 }
 
 ?>

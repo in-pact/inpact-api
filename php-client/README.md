@@ -57,12 +57,6 @@ API methods
   ));
   $reward->accept($supporter_uid);
 
-  # Get a Giving Link info
-  Inpact\GivingLink::find(array(
-    "campaign_id" => $campaign_id,
-    "id"          => $identifier
-  ));
-
   # Creates a Giving Link
   Inpact\GivingLink::create(array(
     "campaign_id" => $campaign_id,
@@ -74,6 +68,35 @@ API methods
     "expires_at" => $expires_at,
     "frequency" => $frequency
   ));
+
+  # Get a Giving Link info
+  Inpact\GivingLink::find(array(
+    "campaign_id" => $campaign_id,
+    "id"          => $identifier
+  ));
+
+  # Creates a Share and Collect resource
+  Inpact\ShareAndCollect::create(array(
+    "campaign_id" => $campaign_id,
+    "name" => $name,
+    "amount" => $amount,
+    "currency" => $currency,
+    "domains" => $domains
+  ));
+
+  # Get a Share and Collect info
+  Inpact\ShareAndCollect::find(array(
+    "campaign_id" => $campaign_id,
+    "id"          => $identifier
+  ));
+
+  # Update a Share and Collect resource
+  $sharable = Inpact\ShareAndCollect::find(array(
+    "campaign_id" => $campaign_id,
+    "id"          => $identifier
+  ));
+  $sharable->amount = 10;
+  $sharable->save();
 
 ```
 
