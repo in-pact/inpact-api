@@ -72,6 +72,10 @@ module Inpact
       @connection[url].put params, {accept: :json}
     end
 
+    def patch(url, params = {})
+      @connection[url].patch params, {accept: :json}
+    end
+
   end
 
 end

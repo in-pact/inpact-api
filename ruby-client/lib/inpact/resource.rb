@@ -5,12 +5,14 @@ module Inpact
     class << self
       attr_accessor :url
       attr_accessor :resource_name
+      attr_accessor :update_method
       attr_accessor :collection_name
       attr_accessor :remote_forbidden_attributes
     end
     @url = nil
     @resource_name = nil
     @remote_forbidden_attributes = [:id]
+    @update_method = :put
 
     class << self
 
@@ -39,7 +41,7 @@ module Inpact
       attrs = @attributes.select do |attr,val|
         not self.class.remote_forbidden_attributes.include?(attr.to_sym)
       end
-      verb = @attributes[:id].nil? ? :post : put
+      verb = @attributes[:id].nil? ? :post : self.class.update_method
       response = Inpact::API.default_client.send(verb, resource_url, self.class.resource_name => attrs)
       @attributes = (@attributes||{}).merge(JSON.parse(response)[self.class.resource_name]||{})
       self

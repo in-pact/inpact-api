@@ -1,5 +1,5 @@
 module Inpact
-  class Reward < Resource
+  class GivingLink < Resource
     @url = "/api/v2/campaigns/%{campaign_id}/giving-links"
     @resource_name   = "link"
     @collection_name = "links"

@@ -53,11 +53,8 @@ API methods
   reward = Inpact::Reward.new(campaign_id: campaign_id, id: reward_id)
   reward.accept(uid)
 
-  # Get a giving link info
-  Inpact::Reward.find(campaign_id: campaign_id, id: identifier)
-
-  # Creates a reward
-  Inpact::Reward.create({
+  # Creates a Giving Link
+  Inpact::GivingLink.create({
     campaign_id: campaign_id,
     name: name,
     amount: amount,
@@ -67,6 +64,28 @@ API methods
     expires_at: expires_at,
     frequency: frequency
   })
+
+  # Get a giving link info
+  Inpact::GivingLink.find(campaign_id: campaign_id, id: identifier)
+
+  # Creates a Share and Collect resource
+  Inpact::ShareAndCollect.create({
+    campaign_id: campaign_id,
+    name: name,
+    amount: amount,
+    currency: currency,
+    domains: domains
+  ));
+
+  # Get a Share and Collect info
+  Inpact::ShareAndCollect.find(campaign_id: campaign_id, id: identifier)
+
+  # Update a Share and Collect resource
+  sharable = Inpact::ShareAndCollect.find(campaign_id: campaign_id, id: identifier)
+  sharable.amount = 10
+  sharable.save
+
+
 ```
 
 
