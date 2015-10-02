@@ -1,4 +1,4 @@
-<?
+<?php
 
 namespace Inpact;
 
@@ -10,8 +10,8 @@ class Account extends Resource
     public static $url = "api/v2/account";
     public static $resource_name = "user";
 
-  public static function create($params) {
-
+  public static function create($params = array()) {
+    return false;
   }
 
 }

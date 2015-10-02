@@ -1,0 +1,27 @@
+{
+    "name": "inpact/inpact-api",
+    "version": "1.0.0",
+    "description": "PHP client for the in/PACT API",
+    "type": "library",
+    "keywords": ["inpact", "in/PACT", "REST", "api", "client", "curl", "JSON"],
+    "homepage": "https://github.com/in-pact/inpact-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cristian Bica",
+            "role": "Developer",
+            "email": "cristian.bica@inpactnow.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/in-pact/inpact-api/issues"
+    },
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "files": ["php-client/inpact.php"]
+    }
+}

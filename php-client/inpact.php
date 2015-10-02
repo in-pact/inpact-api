@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once(__DIR__."/lib/restclient.php");
 require_once(__DIR__."/inpact/api.php");
