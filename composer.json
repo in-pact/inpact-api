@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "PHP client for the in/PACT API",
     "type": "library",
-    "keywords": ["inpact", "in/PACT", "REST", "api", "client", "curl", "JSON"],
+    "keywords": ["inpact", "api", "client"],
     "homepage": "https://github.com/in-pact/inpact-api",
     "license": "MIT",
     "authors": [
