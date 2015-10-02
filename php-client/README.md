@@ -1,6 +1,15 @@
 in/PACT API - PHP Sample
 ===========================
 
+Install
+-------
+
+There are two ways in which you can use the PHP API sample:
+
+1. [Composer](https://packagist.org/packages/inpact/inpact-api): `composer require inpact/inpact-api` 
+2. Manually copy the code and `require 'inpact.php'
+
+
 Configuration
 -------------
 
